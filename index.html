@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tech Revive — Conserto de Celulares e Computadores</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/celular.png" type="image/png">
+  <meta property="og:image" content="https://seusite.com/imagens/logo-share.png">
+  <meta property="og:image:alt" content="Tech Revive — Conserto de Celulares e Computadores">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand" role="banner">
+            <div class="logo" aria-hidden="true">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="#0b74de" />
+                    <path d="M7 12h10M12 7v10" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div>
+                <h1 class="site-title">Tech Revive</h1>
+                <div class="site-sub">Conserto rápido e confiável • Garantia 30 dias</div>
+            </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Principal">
+            <button class="nav-btn" data-view="home">Home</button>
+            <button class="nav-btn" data-view="orcamento">Orçamento</button>
+            <button class="nav-btn" data-view="acompanhamento">Acompanhar</button>
+            <button class="nav-btn" data-view="loja">Loja</button>
+            <button class="nav-btn" data-view="servicos">Serviços</button>
+            <button class="nav-btn" data-view="contato">Contato</button>
+            <button class="nav-btn admin-toggle" data-view="admin">Admin</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- HOME -->
+        <section id="home" class="view">
+            <div class="hero card">
+                <div class="hero-left">
+                    <h2 class="hero-title">Seu aparelho em boas mãos</h2>
+                    <p class="hero-lead">Diagnóstico rápido, peças de qualidade e acompanhamento em tempo real.
+                        Atendimento local com retirada e entrega.</p>
+                    <div class="hero-ctas">
+                        <button class="btn primary" data-view-target="orcamento">Solicitar orçamento</button>
+                        <button class="btn ghost" data-view-target="acompanhamento">Acompanhar reparo</button>
+                    </div>
+
+                    <ul class="features">
+                        <li><strong>Resposta em 24h</strong></li>
+                        <li><strong>Garantia 30 dias</strong></li>
+                        <li><strong>Técnicos certificados</strong></li>
+                    </ul>
+                </div>
+
+                <div class="hero-right">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value">1–3</div>
+                            <div class="stat-label">Troca de tela (dias)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">24h</div>
+                            <div class="stat-label">Diagnóstico</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">Troca de bateria (dia)</div>
+                        </div>
+                    </div>
+
+                    <div class="trust">
+                        <span class="badge">Garantia 30 dias</span>
+                        <span class="badge alt">Peças testadas</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="cards-grid">
+                <article class="card">
+                    <h4>Como funciona</h4>
+                    <ol>
+                        <li>Envie o pedido com fotos</li>
+                        <li>Receba diagnóstico e orçamento</li>
+                        <li>Acompanhe o status até a conclusão</li>
+                    </ol>
+                </article>
+
+                <article class="card">
+                    <h4>Localização</h4>
+                    <p>Rua Exemplo, 123 — Centro, sua cidade</p>
+                    <p class="muted">Seg–Sex 09:00–18:00</p>
+                </article>
+
+                <article class="card">
+                    <h4>Depoimentos</h4>
+                    <blockquote class="testimonial">"Trocaram a tela do meu celular rápido e com ótimo preço.
+                        Recomendo!" — Maria</blockquote>
+                </article>
+            </section>
+        </section>
+
+        <!-- ORÇAMENTO -->
+        <section id="orcamento" class="view hidden card">
+            <h2>Solicitar Orçamento</h2>
+            <p class="muted">Preencha os dados e anexe fotos do problema. Resposta em até 24 horas.</p>
+
+            <form id="formOrcamento" class="form-grid" novalidate>
+                <div class="form-group">
+                    <label for="tipoEquip">Tipo de equipamento</label>
+                    <select id="tipoEquip" required>
+                        <option value="Celular">Celular</option>
+                        <option value="Notebook">Notebook</option>
+                        <option value="Desktop">Desktop</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="marcaModelo">Marca e modelo</label>
+                    <input id="marcaModelo" type="text" placeholder="Ex: Samsung Galaxy S21" required>
+                </div>
+
+                <div class="form-group full">
+                    <label for="problemaRapido">Problema relatado</label>
+                    <select id="problemaRapido">
+                        <option>Selecione</option>
+                        <option>Quebra de tela</option>
+                        <option>Troca de bateria</option>
+                        <option>Não liga</option>
+                        <option>Vírus / lentidão</option>
+                        <option>Câmera com defeito</option>
+                        <option>Outro</option>
+                    </select>
+                    <textarea id="descricao" placeholder="Descreva o problema com mais detalhes"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="fotos">Fotos do problema (até 3)</label>
+                    <input id="fotos" type="file" accept="image/*" multiple>
+                    <div id="previewFotos" class="preview"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contatoPref">Preferência de contato</label>
+                    <select id="contatoPref">
+                        <option>WhatsApp</option>
+                        <option>Telefone</option>
+                        <option>E-mail</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nomeCliente">Nome completo</label>
+                    <input id="nomeCliente" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input id="cep" type="text" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}">
+                </div>
+
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input id="cidade" type="text" value="Sua cidade">
+                </div>
+
+                <div class="form-actions full">
+                    <button type="submit" class="btn primary">Enviar pedido de orçamento</button>
+                    <button type="button" id="limparForm" class="btn ghost">Limpar</button>
+                </div>
+            </form>
+
+            <div id="orcamentoMsg" class="result"></div>
+        </section>
+
+        <!-- ACOMPANHAR -->
+        <section id="acompanhamento" class="view hidden card">
+            <h2>Acompanhar Reparo</h2>
+            <p class="muted">Insira o código do pedido para ver o status e histórico.</p>
+            <div class="inline">
+                <input id="codigoBusca" type="text" placeholder="Ex: TR-20260107-1234">
+                <button id="btnBuscar" class="btn primary">Buscar</button>
+            </div>
+            <div id="resultadoBusca" class="result" style="margin-top:12px"></div>
+        </section>
+
+        <!-- LOJA -->
+        <section id="loja" class="view hidden">
+            <div class="topline">
+                <h2>Loja de Acessórios</h2>
+                <p class="muted">Capas, películas, cabos e carregadores com entrega local.</p>
+            </div>
+
+            <div class="shop">
+                <div class="products" id="produtosList"></div>
+
+                <aside class="cart card">
+                    <h3>Carrinho</h3>
+                    <div id="cartList" class="cart-list"></div>
+                    <div class="cart-total">
+                        <div>Total</div>
+                        <div id="cartTotal">R$ 0,00</div>
+                    </div>
+                    <div class="cart-actions">
+                        <button id="checkoutBtn" class="btn primary">Finalizar compra</button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="view hidden card">
+            <h2>Serviços</h2>
+            <ul class="services-list">
+                <li><strong>Conserto de tela de celulares</strong> — Troca com peças de qualidade e garantia.</li>
+                <li><strong>Troca de bateria de celulares</strong> — Baterias testadas antes da troca.</li>
+                <li><strong>Conserto de computadores</strong> — Diagnóstico, troca de peças e manutenção preventiva.
+                </li>
+                <li><strong>Remoção de vírus e limpeza</strong> — Otimização e backup de dados.</li>
+                <li><strong>Conserto de câmera</strong> — Substituição de módulos e calibração.</li>
+            </ul>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="view hidden card">
+            <h2>Contato e Localização</h2>
+            <div class="contact-grid">
+                <div>
+                    <p class="muted">Rua Exemplo, 123 — Centro</p>
+                    <p class="muted">Telefone / WhatsApp: (xx) xxxxx-xxxx</p>
+                    <p class="muted">Horário: Seg–Sex 09:00–18:00</p>
+                    <label for="msgContato">Mensagem rápida</label>
+                    <textarea id="msgContato" placeholder="Escreva sua dúvida"></textarea>
+                    <div style="margin-top:8px"><button id="enviarMsg" class="btn primary">Enviar</button></div>
+                </div>
+                <div>
+                    <div class="card map">
+                        <h4>Como chegar</h4>
+                        <div class="map-placeholder">Mapa interativo (integração opcional)</div>
+                        <p class="muted">Oferecemos retirada e entrega para sua cidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN -->
+        <section id="admin" class="view hidden card admin-panel">
+            <h2>Painel Admin Simulado</h2>
+            <p class="muted">Visualize pedidos e altere status (simulação local).</p>
+            <div id="adminList"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>© <strong>Tech Revive</strong> — Garantia 30 dias • Atendimento local</div>
+        <div class="footer-links">
+            <button class="link" data-view="servicos">Serviços</button>
+            <button class="link" data-view="contato">Contato</button>
+        </div>
+    </footer>
+
+    <script src="js/app.js" defer></script>
+</body>
+
+</html>
